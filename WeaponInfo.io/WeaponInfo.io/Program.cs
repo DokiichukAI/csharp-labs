@@ -9,74 +9,109 @@ namespace WeaponInfo.io
 
         private static void Main()
         {
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = 
+        ConsoleColor.White;
+
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.OutputEncoding = Encoding.Unicode;
-            Console.InputEncoding = Encoding.Unicode;
-            Console.Title = "WeaponInfo.io (Докийчук А.И) ";
-            Console.WriteLine("----Weapon Info.Ua---- ");
+
+            Console.ForegroundColor =
+        ConsoleColor.Black;
+
+            Console.OutputEncoding = 
+        Encoding.Unicode;
+
+            Console.InputEncoding = 
+        Encoding.Unicode;
+
+            Console.Title = 
+        "WeaponInfo.io (Докийчук А.И) ";
+
+            Console.WriteLine
+        ("----Weapon Info.Ua---- ");
+
             StudyDataIO();
+
             Console.ReadKey(true);
+
 
         }
 
-        static void OutData(string TypeOfWeapon, string Name, double YearOfAdoption, string caliber, string ProdCountry)
+        static void OutData(string typeOfweapon, string name, double yearOfadoption,
+            string caliber, string prodCountry)
         {
 
             Console.WriteLine("Даные об оружии:");
-            Console.WriteLine("\t{0,-9} {1,-9} Год производства: {2,5} Калибр: {3,10} Страна: {4,-10}", TypeOfWeapon, Name, YearOfAdoption, caliber, ProdCountry);
+
+            Console.WriteLine("\t{0,-9} {1,-9} Год производства: {2,5} Калибр: {3,10} " +
+                "Страна: {4,-10}", typeOfweapon, name, yearOfadoption, caliber, prodCountry);
+
             Console.ReadKey(true);
-
-
-
-
-
-
-
-
-
-
-
         }
         static void StudyDataIO()
         {
-            string TypeOfWeapon = "Штурмовая винтовка";
-            string Name = "AK-74";
-            double YearOfAdoption = 1974;
+            string typeOfweapon = "Штурмовая " +
+        "винтовка"; 
+
+            string name = "AK-74";
+
+            double yearOfadoption = 1974;
+
             string caliber = "5.45x39";
-            string ProdCountry = "СССР";
-            OutData(TypeOfWeapon, Name, YearOfAdoption, caliber, ProdCountry);
-            EnterData(out TypeOfWeapon, out Name, out YearOfAdoption, out caliber, out ProdCountry);
+
+            string prodCountry = "СССР";
+
+            OutData(typeOfweapon, name, yearOfadoption,
+        caliber, prodCountry);
+
+            EnterData(out typeOfweapon, out name, out yearOfadoption, 
+        out caliber, out prodCountry);
         }
-
-
-
-        public static void EnterData(out string TypeOfWeapon, out string Name, out double YearOfAdoption, out string caliber, out string ProdCountry)
+        public static void EnterData(out string typeOfweapon, out string name,
+           out double yearOfadoption, out string caliber, out string prodCountry)
         {
-            Name = null;
-            YearOfAdoption = 0.0;
-            TypeOfWeapon = null;
+            name = null; 
+
+            yearOfadoption = 0.0;
+
+            typeOfweapon = null;
+
             caliber = null;
-            ProdCountry = null;
+
+            prodCountry = null;
+
             string s;
             
           Console.WriteLine("Ведите даные об оружии");
+
             Console.WriteLine("\tТип Оружия");
+
              s = Console.ReadLine();
-            TypeOfWeapon = s.Trim();
+
+            typeOfweapon = s.Trim();
+
            Console.WriteLine("\tНазвание: ");
+
              s = Console.ReadLine();
-            Name = s.Trim();
+
+            name = s.Trim();
+
            Console.WriteLine("\tГод производства: ");
+
              s = Console.ReadLine();
-            YearOfAdoption =Convert.ToDouble (s.Trim());
+
+            yearOfadoption =Convert.ToDouble (s.Trim());
+
            Console.WriteLine("\tКалибр: ");
+
              s = Console.ReadLine();
+
             caliber = s.Trim();
+
            Console.WriteLine("\t Страна прозводитель: ");
+
              s = Console.ReadLine();
-            ProdCountry = s.Trim();
+
+            prodCountry = s.Trim();
         }
     }   
 } 
